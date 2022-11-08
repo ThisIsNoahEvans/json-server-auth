@@ -1,4 +1,4 @@
-# 🔐 JSON Server Auth
+# 🔐 JSON Server Auth (no email requirement)
 
 JWT authentication middleware for **[JSON Server](https://github.com/typicode/json-server)**
 
