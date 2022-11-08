@@ -4,6 +4,8 @@ JWT authentication middleware for **[JSON Server](https://github.com/typicode/js
 
 Because you also need a fake **authentication & authorization flow** for your prototyping.
 
+> **_NOTE:_**  This fork removes the requirement for a valid email address, meaning that you can register users with just a `username` and `password`. There are no other changes.
+
 ## Getting started
 
 Install **both** JSON Server and JSON Server Auth :
