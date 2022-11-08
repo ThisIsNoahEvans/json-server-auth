@@ -29,6 +29,7 @@
 		"json-server": "*"
 	},
 	"dependencies": {
+		"@types/node": "^10.17.60",
 		"bcryptjs": "^2.4.3",
 		"jsonwebtoken": "^8.5.1",
 		"yargs": "^16.2.0"

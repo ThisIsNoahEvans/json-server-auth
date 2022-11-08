@@ -21,6 +21,6 @@ declare namespace Express {
 	}
 
 	export interface Request {
-		claims?: { email: string; iat: number; exp: number; sub: string }
+		claims?: { username: string; iat: number; exp: number; sub: string }
 	}
 }
