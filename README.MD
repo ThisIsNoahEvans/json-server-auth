@@ -54,12 +54,13 @@ Any of the following routes registers a new user :
 - **`POST /signup`**
 - **`POST /users`**
 
-**`email`** and **`password`** are required in the request body :
+**`username`** and **`password`** are required in the request body :
+> 
 
 ```http
 POST /register
 {
-  "email": "olivier@mail.com",
+  "username": "oliver",
   "password": "bestPassw0rd"
 }
 ```
@@ -74,7 +75,7 @@ The response contains the JWT access token (expiration time of 1 hour), and the 
   "accessToken": "xxx.xxx.xxx",
   "user": {
     "id": 1,
-    "email": "olivier@mail.com"
+    "username": "oliver"
   }
 }
 ```
@@ -86,7 +87,7 @@ Any other property can be added to the request body without being validated :
 ```http
 POST /register
 {
-  "email": "olivier@mail.com",
+  "username": "oliver",
   "password": "bestPassw0rd",
   "firstname": "Olivier",
   "lastname": "Monge",
@@ -96,7 +97,7 @@ POST /register
 
 ###### Update
 
-Any update to an existing user (via `PATCH` or `PUT` methods) will go through the same process for `email` and `password`.
+Any update to an existing user (via `PATCH` or `PUT` methods) will go through the same process for `username` and `password`.
 
 ### Login 🛂
 
@@ -105,12 +106,12 @@ Any of the following routes logs an existing user in :
 - **`POST /login`**
 - **`POST /signin`**
 
-**`email`** and **`password`** are required, of course :
+**`username`** and **`password`** are required, of course :
 
 ```http
 POST /login
 {
-  "email": "olivier@mail.com",
+  "username": "oliver",
   "password": "bestPassw0rd"
 }
 ```
@@ -123,7 +124,7 @@ The response contains the JWT access token (expiration time of 1 hour), and the 
   "accessToken": "xxx.xxx.xxx",
   "user": {
     "id": 1,
-    "email": "olivier@mail.com",
+    "username": "oliver",
     "firstname": "Olivier",
     "lastname": "Monge"
   }
@@ -135,7 +136,7 @@ The response contains the JWT access token (expiration time of 1 hour), and the 
 The access token has the following claims :
 
 - **`sub` :** the user `id` (as per the [JWT specs](https://tools.ietf.org/html/rfc7519#section-4.1.2)).
-- **`email` :** the user `email`.
+- **`username` :** the user `username`.
 
 ## Authorization flow 🛡️
 
@@ -164,7 +165,7 @@ A user is the owner of a resource if that resource has a **`userId`** property t
 // The owner of
 { id: 8, text: 'blabla', userId: 1 }
 // is
-{ id: 1, email: 'olivier@mail.com' }
+{ id: 1, username: 'oliver' }
 ```
 
 Private guarded routes will use the JWT `sub` claim (which equals the user `id`) to check if the user actually owns the requested resource, by comparing `sub` with the `userId` property.
