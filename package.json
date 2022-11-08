@@ -82,5 +82,8 @@
   "bugs": {
     "url": "https://github.com/ThisIsNoahEvans/json-server-auth/issues"
   },
-  "homepage": "https://github.com/ThisIsNoahEvans/json-server-auth#readme"
+  "homepage": "https://github.com/ThisIsNoahEvans/json-server-auth#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ThisIsNoahEvans"
+  }
 }

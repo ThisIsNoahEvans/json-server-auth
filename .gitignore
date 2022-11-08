@@ -26,6 +26,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+.npmrc
 
 # OS files
 .DS_Store
@@ -38,3 +39,4 @@ Thumbs.db
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.npmrc
